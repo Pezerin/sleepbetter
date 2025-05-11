@@ -1,7 +1,16 @@
 import "./styles.css";
 import { sendMessage } from "./response";
 
-console.log(await sendMessage("Hi, I'm 17 and can't sleep well."));
-console.log(
-  await sendMessage("I go to sleep at 10, wake up at 7, and avoid caffeine.")
-);
+const btn = document.getElementById("btn");
+const input = document.getElementById("question");
+const user = document.getElementById("user");
+const ai = document.getElementById("ai");
+
+btn.addEventListener("click", async () => {
+  const question = input.value;
+  input.value = "";
+
+  user.textContent = question;
+  const response = await sendMessage(question);
+  ai.textContent = response;
+});
