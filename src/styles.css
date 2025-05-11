@@ -55,6 +55,7 @@ body {
 #info h2 {
   padding: 25px;
   color: white;
+  text-align: center;
 }
 
 #info p {
@@ -83,20 +84,22 @@ body {
   margin-top: 15px;
   flex-grow: 1;
   width: 50%;
+  max-height: 60vh;
   overflow-y: auto;
   padding: 20px;
 }
 
-#user {
+.user {
   color: white;
   margin-bottom: 15px;
   align-self: flex-end;
 }
 
-#ai {
+.ai {
   color: white;
   margin-bottom: 15px;
   align-self: flex-start;
+  font-weight: bold;
 }
 
 #input {
@@ -135,4 +138,17 @@ label {
 
 #btn:hover {
   background-color: rgb(25, 25, 25);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.25s ease-in;
 }
